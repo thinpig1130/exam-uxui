@@ -60,6 +60,6 @@ pnpm run preview
 yarn preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information. 
 
-수정한 내용이 반영되는지 보고 싶넹.
+```수정한 내용이 반영되는지 보고 싶넹.```

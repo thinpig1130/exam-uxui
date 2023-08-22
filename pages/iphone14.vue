@@ -432,11 +432,6 @@ onMounted(()=>{
   }
 }
 
-.header {
-
-}
-
 /* .main .intro a:hover{background: linear-gradient(145deg, #dedede, #ffffff); box-shadow:  20px 20px 60px #d2d2d2, -20px -20px 60px #ffffff;} */
-
 
 </style>

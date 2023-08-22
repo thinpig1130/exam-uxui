@@ -1,65 +1,31 @@
-# Nuxt 3 Minimal Starter
+## git-pages html 배포를 위한 환경 
+[참고사이트](https://github.com/lucpotage/nuxt-github-pages)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
+#### 라이브러리 설치
 ```bash
-# npm
-npm install
+npm install gh-pages --save-dev
+```
+#### `nuxt.config.ts` 설정
+```typescript 
+export default defineNuxtConfig({
+  app: {
+    baseURL: "/배포디렉토리명/",
+    buildAssetsDir: 'assets'
+  }
+})
+```
+#### `package.json` 설정
+```json
+{
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  }
+}
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+#### html 생성
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+npm run generate
+npm run deploy
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information. 
-
-```수정한 내용이 반영되는지 보고 싶넹.```

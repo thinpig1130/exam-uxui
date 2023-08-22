@@ -1,9 +1,9 @@
 <script setup>
-const intro = ref(true)
+const intro = ref(null)
 const currentTime = ref(null)
 
 function introHide() {
-  intro.value = false
+  intro.value.classList.add("hide")
 }
 
 function updateTime() {
@@ -50,21 +50,19 @@ onMounted(()=>{
       </div>
     </header>
     <div class="main">
-      <Transition name="fade">
-      <div v-if="intro" class="intro">
+      <div class="intro" ref="intro">
         <p class="txt1">안녕하세요.</p>
         <p class="txt2"><span class="day">2023. 08</span> Portfolio </p>
         <p class="start_btn" @click="introHide"><span>Start</span></p>
       </div>
-      <div v-else class="main_inner">
-        휴대폰에 들어갈 내용
+      <div class="main_inner">
+        메인 이너
       </div>
-      </Transition>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .hide {
   opacity: 0 !important;
   visibility: hidden !important;
@@ -235,7 +233,6 @@ onMounted(()=>{
     font-weight: 700;
     font-size: 36px;
     background: #f7f7f7;
-    //background: #00dc82;
     transition: all .7s ease;
     opacity: 1;
     visibility: initial;
@@ -244,13 +241,6 @@ onMounted(()=>{
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10000;
-
-    /** intro 마운트 종료 시 **/
-    &.fade-enter-from,
-    &.fade-leave-to {
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
 
     .txt1 {
       position: absolute;
@@ -383,7 +373,6 @@ onMounted(()=>{
   }
 }
 
-
-
+/* .main .intro a:hover{background: linear-gradient(145deg, #dedede, #ffffff); box-shadow:  20px 20px 60px #d2d2d2, -20px -20px 60px #ffffff;} */
 
 </style>

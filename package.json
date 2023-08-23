@@ -16,6 +16,7 @@
     "nuxt": "^3.6.5"
   },
   "dependencies": {
+    "nuxt-icons": "^3.2.1",
     "sass": "^1.66.1"
   }
 }

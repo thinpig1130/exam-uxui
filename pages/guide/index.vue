@@ -46,6 +46,15 @@ const selectedTab = ref(tabs[1].name)
     gap: 2rem;
     padding: 2rem;
     z-index: 100;
+
+    .tab {
+      padding: 0.5rem 1rem;
+
+      &.active {
+        background-color: #dcd6c2;
+        border-radius: 0.4rem;
+      }
+    }
   }
 
   .tab_description {

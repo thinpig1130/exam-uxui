@@ -59,13 +59,12 @@ defineExpose({
     selectedIndex.value = value
   }
 })
-
 </script>
 
 <template>
   <div class="tab_set">
     <ul class="tab_header">
-      <li v-for="(one, idx) in tabs" :key="idx" :class="{ active : selectedIndex === idx }" @click="selectTab(idx)">
+      <li class="tab" v-for="(one, idx) in tabs" :key="idx" :class="{ active : selectedIndex === idx }" @click="selectTab(idx)">
         <span>
           {{ getLabel(idx) }}
         </span>

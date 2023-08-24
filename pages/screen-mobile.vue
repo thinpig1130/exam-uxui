@@ -6,7 +6,6 @@ const choicePalletValue = ref('coral_pink');
 <template>
   <div class="mobile-screen">
     <PalletBar label="컬러 테마" v-model="choicePalletValue" />
-    <div>{{choicePalletValue}}</div>
   </div>
 
 </template>
@@ -18,5 +17,6 @@ const choicePalletValue = ref('coral_pink');
   width: 100%;
   max-width: 480px;
   border: 1px solid #1c918b;
+  padding: 1rem;
 }
 </style>

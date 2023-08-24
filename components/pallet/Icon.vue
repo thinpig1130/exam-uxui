@@ -18,8 +18,9 @@ const {value} = defineProps({
   color: black;
 }
 .pallet_icon {
-  width: 30px;
-  height: 30px;
+  flex: 1;
+  max-width: 100px;
+  aspect-ratio: 1 / 1;
   border: 1px solid gray;
   border-radius: 4px;
   position: relative;

@@ -29,6 +29,12 @@ const emits = defineEmits(['update:modelValue'])
 
 <style>
 .pallet_bar {
+  width: 100%;
+
+  > label {
+
+  }
+
   .pallets {
     display: flex;
     gap: 8px;

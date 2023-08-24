@@ -1,7 +1,21 @@
-/* 색상 가이드 */
+/* ECSI 색상 가이드 */
+* {
+  --primary-white: #FFFFFF;
+  --primary-black: #101828;
 
+  --gray-900: #101828;
+  --gray-800: #3F4959;
+  --gray-700: #4C5667;
+  --gray-600: #667183;
+  --gray-500: #98A2B2;
+  --gray-400: #D0D5DD;
+  --gray-300: #E4E7EB;
+  --gray-200: #F2F4F7;
+  --gray-100: #F6F7FA;
+  --gray-50: #F8F9FB;
+}
 
-/* 어프리케이션 색상 파레트*/
+/* 어플리케이션 색상 파레트*/
 body {
   --pallet__coral_pink : #f35f61;
   --pallet__royal_blue : #5d7bf6;

@@ -1,9 +1,9 @@
 /* 색상 가이드 */
-html {
+:root {
   --primary-white: #FFFFFF;
   --primary-black: #101828;
 
-  --gray-900: #101828;
+  --gray-900: #27303F;
   --gray-800: #3F4959;
   --gray-700: #4C5667;
   --gray-600: #667183;
@@ -13,38 +13,47 @@ html {
   --gray-200: #F2F4F7;
   --gray-100: #F6F7FA;
   --gray-50: #F8F9FB;
+
+  --spacing-1: 0.4rem;
+  --spacing-2: calc(var(--spacing-1) * 2);
+  --spacing-3: calc(var(--spacing-1) * 3);
+  --spacing-4: calc(var(--spacing-1) * 4);
+  --spacing-5: calc(var(--spacing-1) * 5);
+  --spacing-6: calc(var(--spacing-1) * 6);
+  --spacing-7: calc(var(--spacing-1) * 7);
+  --spacing-8: calc(var(--spacing-1) * 8);
+  --spacing-15: calc(var(--spacing-1) * 15);
+  --spacing-30: calc(var(--spacing-1) * 30);
 }
 
-/* 어플리케이션 색상 파레트*/
+/* 색상 파레트*/
 body {
-  --pallet__coral_pink : #f35f61;
-  --pallet__royal_blue : #5d7bf6;
-  --pallet__sea_green :  #1c918b;
-  --pallet__orange_gold : #ffc65c;
-  --pallet__dark_gray : #2e2e33;
+  --pallet__coral_pink: #f35f61;
+  --pallet__royal_blue: #5d7bf6;
+  --pallet__sea_green: #1c918b;
+  --pallet__orange_gold: #ffc65c;
+  --pallet__dark_gray: #2e2e33;
 }
-
 
 /* 테마 컬러 지정 */
 .template_theme {
   &.coral_pink {
-    --temp__point_color : var(--pallet__coral_pink);
+    --temp__point_color: var(--pallet__coral_pink);
   }
+
   &.royal_blue {
-    --temp__point_color : var(--pallet__royal_blue);
+    --temp__point_color: var(--pallet__royal_blue);
   }
+
   &.sea_green {
-    --temp__point_color : var(--pallet__sea_green);
+    --temp__point_color: var(--pallet__sea_green);
   }
+
   &.orange_gold {
-    --temp__point_color : var(--pallet__orange_gold);
+    --temp__point_color: var(--pallet__orange_gold);
   }
+
   &.dark_gray {
-    --temp__point_color : var(--pallet__dark_gray);
+    --temp__point_color: var(--pallet__dark_gray);
   }
 }
-
-
-/* 여백 가이드 */
-
-/* */

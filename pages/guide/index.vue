@@ -21,7 +21,8 @@ const selectedTab = ref(tabs[0].name)
         <div class="description" v-html="element.description"></div>
       </div>
     </template>
-    <div>
+    <GuideColor class="guide_body" v-if="selectedTab === 'Colors'"/>
+    <div v-else>
       {{selectedTab}}
     </div>
   </TabSet>

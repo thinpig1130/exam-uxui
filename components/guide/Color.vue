@@ -15,16 +15,16 @@ const colorVariables = [
   {
     title: "Grayscale",
     variables: [
-      {label: "Gray/900", name: "--gray-900", type: TYPE.DARK},
-      {label: "Gray/800", name: "--gray-800", type: TYPE.DARK},
-      {label: "Gray/700", name: "--gray-700", type: TYPE.DARK},
-      {label: "Gray/600", name: "--gray-600", type: TYPE.DARK},
-      {label: "Gray/500", name: "--gray-500"},
-      {label: "Gray/400", name: "--gray-400"},
-      {label: "Gray/300", name: "--gray-300"},
-      {label: "Gray/200", name: "--gray-200"},
-      {label: "Gray/100", name: "--gray-100"},
-      {label: "Gray/50", name: "--gray-50"}
+      {label: "Gray/900", name: "--gray-900", accessLevel: "AAA",type: TYPE.DARK},
+      {label: "Gray/800", name: "--gray-800", accessLevel: "AAA",type: TYPE.DARK},
+      {label: "Gray/700", name: "--gray-700", accessLevel: "AAA",type: TYPE.DARK},
+      {label: "Gray/600", name: "--gray-600", accessLevel: "AA 4.94", type: TYPE.DARK},
+      {label: "Gray/500", name: "--gray-500", accessLevel: "AA 6.88"},
+      {label: "Gray/400", name: "--gray-400", accessLevel: "AAA"},
+      {label: "Gray/300", name: "--gray-300", accessLevel: "AAA"},
+      {label: "Gray/200", name: "--gray-200", accessLevel: "AAA"},
+      {label: "Gray/100", name: "--gray-100", accessLevel: "AAA"},
+      {label: "Gray/50", name: "--gray-50", accessLevel: "AAA"}
     ]
   }
 ]
@@ -35,8 +35,8 @@ const colorVariables = [
     <div class="color_set" v-for="colors in colorVariables">
       <h2 class="set_header"> {{ colors.title }} </h2>
       <div class="set_content">
-        <GuideColorBox v-for="color in colors.variables" :key="color.name"
-                       :label="color.label" :name="color.name" :type="color.type"/>
+        <GuideColorBox v-for="color in colors.variables" :key="color.name" :="color"/>
+<!--                       :label="color.label" :name="color.name" :type="color.type" :access-level="color.accessLevel"/>-->
       </div>
     </div>
   </div>

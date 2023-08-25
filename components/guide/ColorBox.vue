@@ -1,5 +1,5 @@
 <script setup>
-const {label, name, type} = defineProps({
+const {label, name, type, accessLevel} = defineProps({
   label: {
     type: String,
     required: true
@@ -12,7 +12,14 @@ const {label, name, type} = defineProps({
     validator(value) {
       return ['light', 'dark'].includes(value)
     },
+    required: false,
     default: "light"
+  },
+  accessLevel: {
+    validator(value) {
+      return value.includes("AA")
+    },
+    required: false
   }
 })
 
@@ -29,7 +36,7 @@ const value = computed(() => {
       <span class="value">{{ value }}</span>
     </div>
     <div>
-      AAA
+      {{ accessLevel }}
     </div>
   </div>
 </template>
@@ -52,12 +59,15 @@ const value = computed(() => {
     &.dark {
       color: var(--primary-white, #FFF)
     }
+
     &.light, &.border {
       color: var(--primary-black, #000)
     }
+
     &.border {
       border: 1px solid var(--gray-300, #E4E7EB);
     }
+
     .color_info {
       display: flex;
       flex-direction: column;

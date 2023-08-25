@@ -1,0 +1,29 @@
+/** 탭 세트 **/
+.tab_set {
+
+  /** 탭 헤더 **/
+  .tab_header {
+
+    /** 탭 요소 하나 **/
+    .tab {
+    }
+  }
+
+  /** 탭의 공통 변화 부분 **/
+  .tab_nested {
+
+    .nested-enter-active,
+    .nested-leave-active {
+      /** 마운트 시 transition 스타일 **/
+    }
+
+    .nested-enter-from,
+    .nested-leave-to {
+      /** 마운트 해제 시 transition 스타일 **/
+    }
+
+    /** nested slot css **/
+  }
+
+  /** default slot css **/
+}

@@ -22,58 +22,51 @@ const {tabs, modelValue, label, value} = defineProps({
   }
 })
 const emits = defineEmits(['update:modelValue']);
-const selectedIndex = ref(findTabByValue(modelValue));
-/* 값으로 선택된 탭 찾기 */
-function findTabByValue(value) {
-  // 선택한 값이 없을 경우.
-  if ( value === undefined || value === null ) return 0
-  // 선택된 값 찾음.
-  for (let i = 0; i < tabs.length ; i++) {
-    if (value === getValue(i)) return i
-  }
-  return null
-}
-function selectTab(idx) {
-  selectedIndex.value = idx
-  emits('update:modelValue', getValue(idx))
-}
-function getValue(idx) {
-  const tab = tabs[idx]
-  if( value === 'index' ) return idx
-  if( value && typeof tab === 'object' && tab[value] ) return tab[value]
+
+const labels = computed(()=>{
+  return tabs.map((tab, idx)=>{
+    if (typeof tab !== "object") {
+      return tab
+    }
+    return tab[label] ? tab[label] : `TAB_${idx}`
+  })
+})
+const values = computed(()=>{
+  return tabs.map((tab, idx)=>{
+    return getValue(tab, idx);
+  })
+})
+
+const selectedIndex = ref(values.value.indexOf(modelValue));
+
+watch(() => selectedIndex.value, (newIdx) =>{
+  emits( 'update:modelValue', values.value[newIdx]);
+})
+
+function getValue(tab, idx) {
+  if (value === 'index') return idx
+  if (value && typeof tab === 'object' && tab[value]) return tab[value]
   return tab
-}
-function getLabel(idx) {
-  const tab = tabs[idx]
-  if (typeof tab !== "object") {
-    return tab
-  }
-  return tab[label] ? tab[label] : `TAB_${idx}`
 }
 
 defineExpose({
-  getValue: () => {
-    return selectedIndex.value;
-  },
-  setValue: (value) => {
-    selectedIndex.value = value
+  moveTab: (value) => {
+    selectedIndex.value = values.value.indexOf(value)
   }
 })
 </script>
-
 <template>
   <div class="tab_set">
-    <ul class="tab_header">
-      <li class="tab" v-for="(one, idx) in tabs" :key="idx" :class="{ active : selectedIndex === idx }" @click="selectTab(idx)">
-        <span>
-          {{ getLabel(idx) }}
-        </span>
-      </li>
-    </ul>
-    <slot name="selected" :element="tabs[selectedIndex]"/>
-<!--    <template v-for="(one, idx) in tabs" :key="idx">-->
-<!--      <slot v-if="selectedIndex === idx" name="selected" :element="one"/>-->
-<!--    </template>-->
+    <TabHeader :labels="labels" :value="value" v-model="selectedIndex"/>
+    <div class="tab_nested">
+      <ClientOnly>
+        <template v-for="(one, idx) in tabs" :key="idx">
+          <Transition name="nested">
+            <slot v-if="selectedIndex === idx" name="nested" :element="one"/>
+          </Transition>
+        </template>
+      </ClientOnly>
+    </div>
     <slot/>
   </div>
 </template>

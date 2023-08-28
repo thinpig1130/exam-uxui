@@ -1,3 +1,5 @@
+@import '../variables';
+
 .guide_layout {
   height: 100vh;
   position: relative;
@@ -7,7 +9,7 @@
   padding-top: 22rem;
 
   .tab_header {
-    background-color: var(--primary-white, #FFF) ;
+    background-color: $primary-white;
     position: fixed;
     display: flex;
     top: 0;
@@ -17,7 +19,7 @@
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-    border-bottom: 0.1rem solid var(--gray-300, #E4E7EB);
+    border-bottom: 0.1rem solid $gray-300;
     z-index: 100;
 
     .tab {
@@ -36,8 +38,8 @@
     height: 16rem;
     width: 100%;
     overflow: hidden;
-    background-color: var(--primary-black, #000);
-    color: var(--primary-white, #FFF);
+    background-color: $primary-black;
+    color: $primary-white;
 
     .nested-enter-active,
     .nested-leave-active {
@@ -52,7 +54,7 @@
 
     .guid_description {
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
       height: 16rem;
       width: 100%;
@@ -78,4 +80,20 @@
     }
   }
 
+  @media screen {
+    .guide_body {
+
+    }
+  }
+
+  .guide_body {
+    --pallet__default-spacing: var(--spacing-3, 1.2rem);
+    padding: calc(var(--pallet__default-spacing) * 5) calc(var(--pallet__default-spacing) * 7);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pallet__default-spacing);
+
+
+  }
 }

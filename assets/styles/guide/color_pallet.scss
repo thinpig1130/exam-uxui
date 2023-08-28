@@ -1,0 +1,26 @@
+@import '../variables';
+
+.guide_body.color_pallet {
+  .color_set {
+
+    padding-bottom: calc(var(--spacing-8, 3.2rem) - var(--pallet__default-spacing));
+    display: flex;
+    flex-direction: column;
+    gap: var(--pallet__default-spacing);
+
+    .set_header {
+      color: #333;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.6px;
+    }
+
+    .set_content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--pallet__default-spacing);
+    }
+  }
+}

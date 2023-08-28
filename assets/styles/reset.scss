@@ -248,3 +248,54 @@ ul, ol {
   width: 100% !important;
   height: 100% !important;
 }
+
+
+
+/* 색상 가이드 ===================================== */
+:root {
+
+  --spacing-1: 0.4rem;
+  --spacing-2: calc(var(--spacing-1) * 2);
+  --spacing-3: calc(var(--spacing-1) * 3);
+  --spacing-4: calc(var(--spacing-1) * 4);
+  --spacing-5: calc(var(--spacing-1) * 5);
+  --spacing-6: calc(var(--spacing-1) * 6);
+  --spacing-7: calc(var(--spacing-1) * 7);
+  --spacing-8: calc(var(--spacing-1) * 8);
+  --spacing-15: calc(var(--spacing-1) * 15);
+  --spacing-30: calc(var(--spacing-1) * 30);
+}
+
+
+/* 색상 파레트*/
+body {
+
+  --pallet__coral_pink: #f35f61;
+  --pallet__royal_blue: #5d7bf6;
+  --pallet__sea_green: #1c918b;
+  --pallet__orange_gold: #ffc65c;
+  --pallet__dark_gray: #2e2e33;
+}
+
+/* 테마 컬러 지정 */
+.template_theme {
+  &.coral_pink {
+    --temp__point_color: var(--pallet__coral_pink);
+  }
+
+  &.royal_blue {
+    --temp__point_color: var(--pallet__royal_blue);
+  }
+
+  &.sea_green {
+    --temp__point_color: var(--pallet__sea_green);
+  }
+
+  &.orange_gold {
+    --temp__point_color: var(--pallet__orange_gold);
+  }
+
+  &.dark_gray {
+    --temp__point_color: var(--pallet__dark_gray);
+  }
+}

@@ -1,12 +1,12 @@
 @import '../variables';
+@import "../mixin";
 
 .guide_body.color_pallet {
   .color_set {
-
-    padding-bottom: calc(var(--spacing-8, 3.2rem) - var(--pallet__default-spacing));
+    padding-bottom: $spacing-5;
     display: flex;
     flex-direction: column;
-    gap: var(--pallet__default-spacing);
+    gap: $spacing-3;
 
     .set_header {
       color: #333;
@@ -20,7 +20,17 @@
     .set_content {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--pallet__default-spacing);
+      gap: $spacing-3;
+    }
+  }
+
+  @include mobile {
+    .color_set {
+      gap: $spacing-2;
+
+      .set_content {
+        gap: $spacing-2;
+      }
     }
   }
 }

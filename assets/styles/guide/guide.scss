@@ -1,6 +1,8 @@
 @import '../variables';
+@import '../mixin';
 
 .guide_layout {
+
   height: 100vh;
   position: relative;
   display: flex;
@@ -80,20 +82,29 @@
     }
   }
 
-  @media screen {
-    .guide_body {
+  .guide_body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-3;
 
+  }
+
+  @include mobile {
+    .guide_body {
+      padding: $spacing-3 $spacing-3;
+      gap: $spacing-2;
     }
   }
 
-  .guide_body {
-    --pallet__default-spacing: var(--spacing-3, 1.2rem);
-    padding: calc(var(--pallet__default-spacing) * 5) calc(var(--pallet__default-spacing) * 7);
+  @include tablet {
+    .guide_body {
+      padding: $spacing-10 $spacing-14;
+    }
+  }
 
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--pallet__default-spacing);
-
-
+  @include desktop {
+    .guide_body {
+      padding: $spacing-15 $spacing-21;
+    }
   }
 }

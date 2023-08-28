@@ -1,0 +1,33 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'Pretendard';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard');
+	src: url(./Pretendard/Pretendard-Bold.woff) format('woff2'),url(./Pretendard/Pretendard-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard');
+	src: url(./Pretendard/Pretendard-Medium.woff) format('woff2'),url(./Pretendard/Pretendard-Medium.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard');
+	src: url(./Pretendard/Pretendard-Regular.woff) format('woff2'),url(./Pretendard/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard');
+	src: url(./Pretendard/Pretendard-Light.woff) format('woff2'),url(./Pretendard/Pretendard-Light.woff) format('woff');
+}

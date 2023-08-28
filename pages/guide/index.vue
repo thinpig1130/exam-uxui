@@ -19,8 +19,8 @@ const selectedTab = ref(tabs[0].name)
 
 <template>
   <TabSet class="guide_layout" :tabs="tabs" v-model="selectedTab" value="name">
-    <template #nested="{ element }">
-      <div class="guid_description">
+    <template #nested="{ element, selected }">
+      <div class="guid_description" :class="{ selected :selected }">
         <h1 class="title">{{ element.name }}</h1>
         <div class="description" v-html="element.description"></div>
       </div>

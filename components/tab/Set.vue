@@ -59,13 +59,9 @@ defineExpose({
   <div class="tab_set">
     <TabHeader :labels="labels" :value="value" v-model="selectedIndex"/>
     <div class="tab_nested">
-      <ClientOnly>
         <template v-for="(one, idx) in tabs" :key="idx">
-          <Transition name="nested">
-            <slot v-if="selectedIndex === idx" name="nested" :element="one"/>
-          </Transition>
+          <slot name="nested" :element="one" :selected="selectedIndex === idx"/>
         </template>
-      </ClientOnly>
     </div>
     <slot/>
   </div>

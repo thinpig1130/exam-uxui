@@ -19,13 +19,12 @@
 }
 
 /**
- * button 생성기
+ * button 생성 규칙
  * size : s | m | l
  * style : solid | outline | link
  * color : primary | gray | warning
  * type : default, square, before-icon, after-icon, vertical-icon ...
 **/
-
 @mixin gen-button($size: 'm', $color: "primary", $style: "solid", $type: "default") {
   position: relative;
   display: flex;
@@ -74,6 +73,7 @@
     border: none;
     background-color: #ffff;
     color: $_btn_color;
+    $_btn_spacing : 0;
     &:active {
       font-weight: 600;
     };
@@ -91,8 +91,7 @@
   }
 
 
-
-  /* 타입 (커스텀) */
+  /* 타입 */
   /* default, square, before-icon, after-icon, vertical-icon */
   @if $type == 'square' {
     height: $_btn_height;
@@ -116,6 +115,7 @@
     padding: $spacing-1 ($_btn_spacing * 2);
   }
 
+  /* 비활성화 */
   &:disabled {
     border: 1px solid $gray-300;
     background-color: $gray-300;

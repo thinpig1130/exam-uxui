@@ -18,4 +18,128 @@
   }
 }
 
+/**
+ * button 생성기
+ * size : s | m | l
+ * style : solid | outline | link
+ * color : primary | gray | warning
+ * type : default, square, before-icon, after-icon, vertical-icon ...
+**/
 
+@mixin gen-button($size: 'm', $color: "primary", $style: "solid", $type: "default") {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  gap: $spacing-1;
+  $_btn_height: 3.6rem; /* size : m */
+  $_btn_spacing: $spacing-2; /* size : m */
+  $_btn_color: #4359A4; /* color : primary */
+  .nuxt-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* 사이즈 */
+  @if $size == 's' {
+    $_btn_height: 2.8rem;
+    font-size: 1.4rem;
+    $_btn_spacing: $spacing-1;
+  } @else if $size == 'l' {
+    $_btn_height: 4.8rem;
+    font-size: 1.8rem;
+    $_btn_spacing: $spacing-3;
+  } @else {
+    font-size: 1.5rem;
+  }
+
+  /* 색상 */
+  @if $color == 'gray' {
+    $_btn_color: $gray-800;
+  } @else if $color == 'warning' {
+    $_btn_color: #bb1212;
+  }
+
+  /* 스타일 */
+  @if $style == 'outline' {
+    border: 1px solid $_btn_color;
+    background-color: $primary-white;
+    color: $_btn_color;
+    &:active {
+      background-color: lighten( $_btn_color, 45%) ;
+    };
+  } @else if $style == 'link' {
+    border: none;
+    background-color: #ffff;
+    color: $_btn_color;
+    &:active {
+      font-weight: 600;
+    };
+  } @else {
+    border: none;
+    background-color: $_btn_color;
+    color: $primary-white;
+    &:active {
+      background-color: darken( $_btn_color, 10%) ;
+    };
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+
+
+  /* 타입 (커스텀) */
+  /* default, square, before-icon, after-icon, vertical-icon */
+  @if $type == 'square' {
+    height: $_btn_height;
+    padding: $_btn_spacing;
+    width: $_btn_height;
+    overflow: hidden;
+  } @else if $type == 'before-icon' {
+    height: $_btn_height;
+    padding: $spacing-1 ($_btn_spacing * 2) $spacing-1 $_btn_spacing;
+    overflow: hidden;
+  } @else if $type == "after-icon" {
+    height: $_btn_height;
+    padding: $spacing-1 $_btn_spacing $spacing-1 ($_btn_spacing * 2);
+    overflow: hidden;
+  } @else if $type == "vertical-icon" {
+    flex-direction: column;
+    padding: $_btn_spacing;
+    overflow: hidden;
+  } @else {
+    height: $_btn_height;
+    padding: $spacing-1 ($_btn_spacing * 2);
+  }
+
+  &:disabled {
+    border: 1px solid $gray-300;
+    background-color: $gray-300;
+    color: $gray-500;
+    text-decoration: none;
+  }
+
+}
+
+@mixin gen-all-buttons() {
+  $sizes: "s", "m", "l";
+  $styles: "solid", "outline", "link";
+  $colors: "primary", "gray", "warning";
+  $types: "default", "square", "before-icon", "after-icon", "vertical-icon";
+
+  @each $size in $sizes {
+    @each $style in $styles {
+      @each $color in $colors {
+        @each $type in $types {
+          .btn_#{$size}_#{$style}_#{$color}_#{$type} {
+            @include gen-button($size, $color, $style, $type);
+          }
+        }
+      }
+    }
+  }
+}

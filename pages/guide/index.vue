@@ -32,6 +32,7 @@ const selectedTab = ref(tabs[0].name)
     </template>
     <GuideColorPallet class="guide_body" v-if="selectedTab === 'Colors'"/>
     <GuideButtonTable class="guide_body" v-else-if="selectedTab === 'Buttons'"/>
+    <GuideTypography class="guide_body" v-else-if="selectedTab === 'Typography'"/>
     <div v-else>
       {{selectedTab}}
     </div>

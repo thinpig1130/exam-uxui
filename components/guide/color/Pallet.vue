@@ -36,7 +36,6 @@ const colorVariables = [
       <h2 class="set_header"> {{ colors.title }} </h2>
       <div class="set_content">
         <GuideColorBox v-for="color in colors.variables" :key="color.name" :="color"/>
-<!--                       :label="color.label" :name="color.name" :type="color.type" :access-level="color.accessLevel"/>-->
       </div>
     </div>
   </div>

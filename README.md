@@ -37,9 +37,6 @@ npm install --save-dev @nuxtjs/style-resources
 npm uninstall @nuxtjs/style-resources
 ```
 
-
 ## 설문지 디자인 참고 자료
 ###### [UI 사용법 (설문만들기)](https://guide.feedback.io/b4393375-60c3-4176-a7d3-ed4615640638)
 ###### [통계 UI](https://openanalytics.opensurvey.co.kr/surveys/crosstab/128079?shareKey=CfLNGqvNek73)
-
-

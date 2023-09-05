@@ -38,7 +38,7 @@ const typographies = [
     applied: "메인페이지, 설문지미리보기화면 내부"
   },
   {
-    name: "Menu/medium",
+    name: "Menu / medium",
     subName: null,
     weight: "Medium",
     size: 17,
@@ -47,7 +47,7 @@ const typographies = [
     applied: ""
   },
   {
-    name: "Menu/regular",
+    name: "Menu / regular",
     subName: null,
     weight: "Regular",
     size: 16,
@@ -56,7 +56,7 @@ const typographies = [
     applied: ""
   },
   {
-    name: "Body01/default",
+    name: "Body01 / default",
     subName: null,
     weight: "Regular",
     size: 15,
@@ -65,7 +65,7 @@ const typographies = [
     applied: "DropdownBox_medium(default), Primary Button, Primary Button"
   },
   {
-    name: "Body01/medium",
+    name: "Body01 / medium",
     subName: null,
     weight: "Medium",
     size: 15,
@@ -74,7 +74,7 @@ const typographies = [
     applied: "Tab"
   },
   {
-    name: "Body01/bold",
+    name: "Body01 / bold",
     subName: null,
     weight: "Bold",
     size: 15,
@@ -83,7 +83,7 @@ const typographies = [
     applied: "Tab, 페이지네이션버튼텍스트, Primary Button"
   },
   {
-    name: "Body02/default",
+    name: "Body02 / default",
     subName: null,
     weight: "Regular",
     size: 15,
@@ -92,7 +92,7 @@ const typographies = [
     applied: "(상위) Table_Body"
   },
   {
-    name: "Body02/medium",
+    name: "Body02 / medium",
     subName: null,
     weight: "Medium",
     size: 15,
@@ -101,7 +101,7 @@ const typographies = [
     applied: "Tab_Default, (상위) Table_Head"
   },
   {
-    name: "Body02/Bold",
+    name: "Body02 / Bold",
     subName: null,
     weight: "Bold",
     size: 15,
@@ -110,7 +110,7 @@ const typographies = [
     applied: "Tab_Selected, (상위) Table_Body_Blod"
   },
   {
-    name: "Body03/default",
+    name: "Body03 / default",
     subName: null,
     weight: "Regular",
     size: 14,
@@ -119,7 +119,7 @@ const typographies = [
     applied: "Table_Body, DropdownBox_small"
   },
   {
-    name: "Body03/medium",
+    name: "Body03 / medium",
     subName: null,
     weight: "Medium",
     size: 14,
@@ -128,7 +128,7 @@ const typographies = [
     applied: "Table_Head, Secondary Button"
   },
   {
-    name: "Body03/blod",
+    name: "Body03 / blod",
     subName: null,
     weight: "Bold",
     size: 14,
